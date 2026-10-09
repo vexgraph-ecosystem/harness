@@ -30,12 +30,26 @@ header, test partition or build target.
 **Platforms proven:** none.
 
 ## What it is
-`harness` is the user's own agent for this ecosystem: one place to operate your
-projects, run external tools, and drive your R5 applications — built on the
-ecosystem's own contracts instead of renting someone else's agent host. It
-borrows R2 memory/CPU, consumes `api-haven` connectors as-is, presents through
-`darling-framework`, and orchestrates compile-time `func` opcodes. It owns no
-connector, GPU, session or OS implementation of its own.
+`harness` is the user's own agent — a coding-agent harness that feels like pi,
+opencode or Claude Code, but scoped to this ecosystem instead of renting someone
+else's host. It holds a model, drives prompts and history, calls tools (read and
+write files, run `func` and other commands), hosts its own MCP surface and speaks
+to external MCP servers, and presents through `darling-framework`. It borrows R2
+memory/CPU and consumes `api-haven` connectors as-is; it owns no connector, GPU,
+session or OS implementation.
+
+### Planned objects (first to build)
+- `Model` — an AI model binding (variant, speed, context/token budget).
+- `Prompt` — a composed request (system + messages + attachments) and its builder.
+- `Conversation` — the turn history.
+- `Answer` — a streamed response chunk/result.
+- `Question` — the interactive question/prompt section surface.
+- `Tool` — a callable the agent invokes (read/write files, run `func`, MCP call).
+- `ToolRegistry` — the agent's tool set (built-ins + `func` + MCP).
+- `HarnessMcp` — the agent's own MCP surface; the external MCP client speaks to
+  Claude/other servers. Names are prefixed to avoid colliding with api-haven's
+  `McpServer`.
+- `Harness` — the agent host tying Model + Tools + Conversation + interface together.
 
 ## Depends on (Vertical Integration Law allowlist)
 R4 interface: borrows `relational-engine` (memory/IO), `vexspoke`, and
