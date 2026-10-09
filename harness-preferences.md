@@ -68,7 +68,8 @@ dependency-free and legible to the AI pair system.
 #### The Rule:
 1. **Integrate only via contracts.** Projects, tools and R5 apps are reached
    through declared seams (opaque handle + fn-table); no reaching into another
-   tier's internals. This is a personal agent, not a second opencode.
+   tier's internals. This is a harness agent scoped to this ecosystem, not a
+   general-purpose host.
 2. **Compile-time, not interpreted.** Orchestrations compile to native code
    through `func`; no interpreted orchestration engine ships as runtime state.
 3. **Bounded children only.** Every external tool is a bounded child (100 ms reap
