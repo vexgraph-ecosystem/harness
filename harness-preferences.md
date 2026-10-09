@@ -77,6 +77,17 @@ dependency-free and legible to the AI pair system.
    `system()`.
 4. **Cold validation.** Agent input is validated once at the cold seam (the
    Cold-Strict, Hot-Minimal Validation Law); failures reject loudly (the THROW Law).
+5. **Agent objects, not duplicate drivers.** Planned Model, Prompt, Conversation,
+   Answer, Question, Tool, ToolRegistry and Harness objects own agent policy,
+   history and interface state. HarnessMcp describes the agent's own tool/resource
+   surface; protocol parsing/hosting and external MCP transport consume API Haven
+   contracts, never a parallel R4 implementation. The vocabulary is planned, not
+   an implemented API or model/provider integration claim.
+6. **Proof before trust.** Future mirrored `tests/harness/` owners must prove
+   registry growth/exhaustion, bounded retained history/output, failure/recovery,
+   cancellation and actual tool/provider seams. Legal shared-state pressure follows
+   the Deliberate Exhaustion and Backend Trust Law; fake providers or documentation
+   checks alone establish neither live integration nor production readiness.
 
 ---
 
