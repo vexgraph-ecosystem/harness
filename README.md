@@ -23,8 +23,8 @@ interface. It is an R4 interface, never an R5 engine.
 
 **Implemented and proven:** nothing. This is a **source-free blueprint**:
 `README.md`, `CONTRIBUTING.md`, `LICENSE`, `harness-preferences.md`,
-`.gitignore` and an IDE-only `LANGUAGES NONE` `CMakeLists.txt`. No `src/`,
-header, test partition or build target.
+`.gitignore` and an IDE-only `LANGUAGES NONE` `CMakeLists.txt`. No production
+source, public header, test partition or build target. The current `src/` directory is empty.
 
 **Specified only:** the Harness Host Boundary Law and the Agent Integration Law
 (forward contracts with nothing to bind yet).
@@ -50,7 +50,8 @@ session or OS implementation.
 - `ToolRegistry` — the agent's tool set (built-ins + `func` + MCP).
 - `HarnessMcp` — the agent's own MCP surface; the external MCP client speaks to
   Claude/other servers. Names are prefixed to avoid colliding with api-haven's
-  `McpServer`.
+  `McpServer`. This is agent-level registration over API Haven's protocol/hosting
+  contracts, not a competing R4 JSON-RPC or transport implementation.
 - `Harness` — the agent host tying Model + Tools + Conversation + interface together.
 
 ## Depends on (Vertical Integration Law allowlist)
