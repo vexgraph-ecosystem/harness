@@ -13,6 +13,8 @@ or standalone runtime build is claimed by this metadata entry.
 
 ## Current State
 
+**Draft — not finalized.** The scope below may change as the design lands.
+
 **Role:** R4 interface — the user's **own agent**, integrated with this
 ecosystem rather than a third-party agent host. It drives the user's projects,
 external tools and R5 applications through registered seams, consumes `api-haven`
