@@ -1,22 +1,7 @@
 # harness — the user's own agent for the ecosystem (R4 interface)
 
-## CLion: CMake is IDE metadata only
-
-Open the workspace root for the shared CMake code model: it includes this repo's
-indexing-only adapter and supplies the local Vexspoke header root. The adapter
-recursively discovers `src/*.c` and `src/*.h`, so new classes/directories need
-no additional CMake files. Reload CMake after adding files.
-
-To open this repository independently, configure `CMakeLists.txt` with
-`-DVEXSPOKE_SOURCE_DIR=<local-vexspoke>/src`. Its excluded `harness_ide` object
-target supplies C23 compiler/include metadata for diagnostics and inlay hints.
-Missing dependencies remain real errors. No fake declarations, downloads,
-release linking or application runner are wired into it; default standalone
-builds do nothing. Enable inlay hints in the IDE separately. IDE appearance is
-user-verified, not established by compilation-database checks.
-
-Future builds belong to [b](https://github.com/vex-graph/b). No runnable target
-or standalone runtime build is claimed by this metadata entry.
+Future builds belong to [b](https://github.com/vex-graph/b). No runnable agent
+target exists yet.
 
 ## Current State
 
@@ -38,7 +23,7 @@ syntax/indexing checks are not feature-readiness proof.
 **Specified only:** the Harness Host Boundary Law and the Agent Integration Law
 (forward contracts with nothing to bind yet).
 
-**Runtime platforms proven:** none. CMake code-model proof is separately scoped
+**Runtime platforms proven:** none. Workspace code-model proof is separately scoped
 in `tests/tools/harness_ide_test.py`; it does not prove agent execution or actual
 IDE appearance.
 
