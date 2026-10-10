@@ -100,11 +100,10 @@ pairs and header-only support. They are not live agent/provider/UI integration.
 Their lifecycle/identity/accessor contracts and message projections still require
 review and behavioral owners; this metadata cycle does not approve those gaps.
 
-The workspace root reuses this repository's excluded `harness_ide` object target
-for indexing, supplying the local Vexspoke headers. The adapter discovers `.c`
-and `.h` sources recursively; no per-class/per-directory CMake is needed. An
-independent checkout supplies `VEXSPOKE_SOURCE_DIR` explicitly. CMake/compiler
-tests prove source contexts, header resolution and recursive discovery only,
+The workspace owns all editor indexing and supplies the local Vexspoke headers.
+It discovers `.c` and `.h` sources recursively; this repository owns no CMake
+entry. Workspace compiler tests prove source contexts, header resolution and
+recursive discovery only,
 not actual highlighting/inlay appearance or runtime dependency closure. Existing
 planned agent objects and ownership boundaries above are unchanged.
 
