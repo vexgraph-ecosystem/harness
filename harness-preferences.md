@@ -93,6 +93,21 @@ dependency-free and legible to the AI pair system.
 
 ## 3. Repo-Local Extensions (managed, per the Conflict Triage Law)
 
+### Current draft and IDE evidence boundary
+
+`src/space/` now contains unfinished ModelUser, Channel, Message and Task class
+pairs and header-only support. They are not live agent/provider/UI integration.
+Their lifecycle/identity/accessor contracts and message projections still require
+review and behavioral owners; this metadata cycle does not approve those gaps.
+
+The workspace root reuses this repository's excluded `harness_ide` object target
+for indexing, supplying the local Vexspoke headers. The adapter discovers `.c`
+and `.h` sources recursively; no per-class/per-directory CMake is needed. An
+independent checkout supplies `VEXSPOKE_SOURCE_DIR` explicitly. CMake/compiler
+tests prove source contexts, header resolution and recursive discovery only,
+not actual highlighting/inlay appearance or runtime dependency closure. Existing
+planned agent objects and ownership boundaries above are unchanged.
+
 ;;INTENTION("R4 agent interface: the user's own agent integrated with the ecosystem; consumes api-haven as-is; drives projects/tools/R5 apps through registered seams; owns no connector/GPU/OS implementation; bounded child tools only.")
 
 ## 4. Readiness Cross-Reference (Living Documentation Law)
