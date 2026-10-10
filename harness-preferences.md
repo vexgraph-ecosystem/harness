@@ -95,10 +95,12 @@ dependency-free and legible to the AI pair system.
 
 ### Current draft and IDE evidence boundary
 
-`src/space/` now contains unfinished ModelUser, Channel, Message and Task class
-pairs and header-only support. They are not live agent/provider/UI integration.
-Their lifecycle/identity/accessor contracts and message projections still require
-review and behavioral owners; this metadata cycle does not approve those gaps.
+`src/space/` now contains C23 ModelUser, Channel, Message and Task class pairs and
+header-only support, with offline behavioral owners under `tests/harness/space/`
+(plus a compile-negative arity battery) run by `python3 tests/harness/run.py` and
+`./tools/b test <unit>`. They are still not live agent/provider/UI integration;
+message text stays borrowed, and the projections/identity contracts keep their
+stated limits.
 
 The workspace owns all editor indexing and supplies the local Vexspoke headers.
 It discovers `.c` and `.h` sources recursively; this repository owns no CMake

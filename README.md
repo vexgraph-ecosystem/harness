@@ -13,12 +13,18 @@ external tools and R5 applications through registered seams, consumes `api-haven
 as-is (AI providers + connectors), and composes `darling-framework` for
 interface. It is an R4 interface, never an R5 engine.
 
-**Current source:** four unfinished C23 class pairs in `src/space/`: `ModelUser`,
-`Channel`, `Message` and `Task`, plus header-only support. They expose persona
-metadata, channel identity, borrowed message spans and task transitions/delegation.
-No HernessServer, mention router, live provider execution or Darling UI exists.
-The draft classes have no executed behavioral owner tests or runtime build target;
-syntax/indexing checks are not feature-readiness proof.
+**Current source:** the `src/space/` draft values — `ModelUser`, `Channel`,
+`Message` and `Task` (C23 class pairs) plus header-only support. They expose
+persona metadata, channel identity, borrowed message spans and task
+transitions/delegation. No HarnessServer, mention router, live provider execution
+or Darling UI exists.
+
+**Behavioral owners (offline):** `tests/harness/space/{support,model_user,channel,message,task}_test.c`
+plus a compile-negative arity battery (`space_arity_test.py`), run by
+`python3 tests/harness/run.py` (strict `-Wall -Wextra -Werror` and ASan/UBSan) and
+by `./tools/b test <unit>`. They prove construction, boundary/rejection behaviour,
+reject-and-preserve failure, null-safe getters and bounded projections. They do
+**not** prove a provider, server, UI or cross-platform runtime.
 
 **Specified only:** the Harness Host Boundary Law and the Agent Integration Law
 (forward contracts with nothing to bind yet).
@@ -62,7 +68,7 @@ tools, not includes.
 - Draft coordination values: `src/space/` — four class pairs and shared support.
 - Interface (future): the agent host, its R5/project/tool seams and the injected
   `harness_run`/`harness_poll` driver.
-- Tests: the shared `../../../tests` repo will host a `tests/harness/` partition
+- Tests: the shared `../../../tests` repo hosts the `tests/harness/` partition
   (mirrored per unit, the Test Tree Mirror Law); no test file lives inside this
   repo's source directories (the Test Segregation Law).
 
@@ -82,8 +88,9 @@ connectors, `func`'s compile-time opcodes and `darling-framework`'s interface.
 R5 engine of its own; GPU shaders/dispatch remain Graphvex R3; network/transport
 stays in api-haven and Relational Engine.
 
-**Known limits and gaps:** the space values remain unfinished and behaviorally
-unproved; the planned agent objects above remain specification only. No runtime
-platform is proven and no `tests/harness/` partition exists. Message text is
-borrowed, not durable history; identity/accessor exceptions and projections need
-contract review before completing the core. IDE metadata does not close these gaps.
+**Known limits and gaps:** the space values are behaviorally owned offline but
+remain a draft with no runtime build target, no provider/server/UI integration and
+no proven platform. The planned agent objects above remain specification only. No
+runtime platform is proven. Message text is borrowed, not durable history;
+identity/accessor exceptions and projections need contract review before completing
+the core. IDE metadata does not close these gaps.
