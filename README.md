@@ -2,11 +2,18 @@
 
 ## CLion: CMake is IDE metadata only
 
-Open this repository root as a CMake project. `CMakeLists.txt` is an IDE-only
-blueprint entry: there are no production sources or C23 source targets yet, so
-there is nothing to provide semantic diagnostics or inlay hints for. No fake
-declarations, dependency downloads, linking or application runner are wired
-into it. IDE appearance is user-verified.
+Open the workspace root for the shared CMake code model: it includes this repo's
+indexing-only adapter and supplies the local Vexspoke header root. The adapter
+recursively discovers `src/*.c` and `src/*.h`, so new classes/directories need
+no additional CMake files. Reload CMake after adding files.
+
+To open this repository independently, configure `CMakeLists.txt` with
+`-DVEXSPOKE_SOURCE_DIR=<local-vexspoke>/src`. Its excluded `harness_ide` object
+target supplies C23 compiler/include metadata for diagnostics and inlay hints.
+Missing dependencies remain real errors. No fake declarations, downloads,
+release linking or application runner are wired into it; default standalone
+builds do nothing. Enable inlay hints in the IDE separately. IDE appearance is
+user-verified, not established by compilation-database checks.
 
 Future builds belong to [b](https://github.com/vex-graph/b). No runnable target
 or standalone runtime build is claimed by this metadata entry.
@@ -21,15 +28,19 @@ external tools and R5 applications through registered seams, consumes `api-haven
 as-is (AI providers + connectors), and composes `darling-framework` for
 interface. It is an R4 interface, never an R5 engine.
 
-**Implemented and proven:** nothing. This is a **source-free blueprint**:
-`README.md`, `CONTRIBUTING.md`, `LICENSE`, `harness-preferences.md`,
-`.gitignore` and an IDE-only `LANGUAGES NONE` `CMakeLists.txt`. No production
-source, public header, test partition or build target. The current `src/` directory is empty.
+**Current source:** four unfinished C23 class pairs in `src/space/`: `ModelUser`,
+`Channel`, `Message` and `Task`, plus header-only support. They expose persona
+metadata, channel identity, borrowed message spans and task transitions/delegation.
+No HernessServer, mention router, live provider execution or Darling UI exists.
+The draft classes have no executed behavioral owner tests or runtime build target;
+syntax/indexing checks are not feature-readiness proof.
 
 **Specified only:** the Harness Host Boundary Law and the Agent Integration Law
 (forward contracts with nothing to bind yet).
 
-**Platforms proven:** none.
+**Runtime platforms proven:** none. CMake code-model proof is separately scoped
+in `tests/tools/harness_ide_test.py`; it does not prove agent execution or actual
+IDE appearance.
 
 ## What it is
 `harness` is the user's own agent — a coding-agent harness that feels like pi,
@@ -63,8 +74,9 @@ fn-tables), never by including R5 headers. Never included by R1/R2/R3. It may
 tools, not includes.
 
 ## Layout
-- Interface (future): `src/` — the agent host, its R5/project/tool seams and the
-  injected `harness_run`/`harness_poll` driver.
+- Draft coordination values: `src/space/` — four class pairs and shared support.
+- Interface (future): the agent host, its R5/project/tool seams and the injected
+  `harness_run`/`harness_poll` driver.
 - Tests: the shared `../../../tests` repo will host a `tests/harness/` partition
   (mirrored per unit, the Test Tree Mirror Law); no test file lives inside this
   repo's source directories (the Test Segregation Law).
@@ -85,6 +97,8 @@ connectors, `func`'s compile-time opcodes and `darling-framework`'s interface.
 R5 engine of its own; GPU shaders/dispatch remain Graphvex R3; network/transport
 stays in api-haven and Relational Engine.
 
-**Known limits and gaps:** zero implementation — every contract above is
-specification only; no platform is proven and no `tests/harness/` partition
-exists.
+**Known limits and gaps:** the space values remain unfinished and behaviorally
+unproved; the planned agent objects above remain specification only. No runtime
+platform is proven and no `tests/harness/` partition exists. Message text is
+borrowed, not durable history; identity/accessor exceptions and projections need
+contract review before completing the core. IDE metadata does not close these gaps.
