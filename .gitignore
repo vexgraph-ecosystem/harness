@@ -53,3 +53,8 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Local IDE/build output; generated, never committed (the Standalone Autonomy Law).
+cmake-build-*/
+build/
+compile_commands.json
