@@ -55,6 +55,6 @@ dkms.conf
 *.dwo
 
 # Local IDE/build output; generated, never committed (the Standalone Autonomy Law).
-cmake-build-*/
+cmake-build-debug/
 build/
 compile_commands.json
