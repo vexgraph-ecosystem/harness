@@ -13,7 +13,7 @@ external tools and R5 applications through registered seams, consumes `api-haven
 as-is (AI providers + connectors), and composes `darling-framework` for
 interface. It is an R4 interface, never an R5 engine.
 
-**Current source:** the `src/space/` draft values — `ModelUser`, `Channel`,
+**Current source:** the `src/space` draft values — `ModelUser`, `Channel`,
 `Message` and `Task` (C23 class pairs) plus header-only support. They expose
 persona metadata, channel identity, borrowed message spans and task
 transitions/delegation. No HarnessServer, mention router, live provider execution
@@ -30,7 +30,7 @@ reject-and-preserve failure, null-safe getters and bounded projections. They do
 (forward contracts with nothing to bind yet).
 
 **Runtime platforms proven:** none. Workspace code-model proof is separately scoped
-in `tests/tools/harness_ide_test.py`; it does not prove agent execution or actual
+in `../../tests/tools/harness_ide_test.py`; it does not prove agent execution or actual
 IDE appearance.
 
 ## What it is
@@ -65,15 +65,15 @@ fn-tables), never by including R5 headers. Never included by R1/R2/R3. It may
 tools, not includes.
 
 ## Layout
-- Draft coordination values: `src/space/` — four class pairs and shared support.
+- Draft coordination values: `src/space` — four class pairs and shared support.
 - Interface (future): the agent host, its R5/project/tool seams and the injected
   `harness_run`/`harness_poll` driver.
-- Tests: the shared `../../../tests` repo hosts the `tests/harness/` partition
+- Tests: the shared `../../tests` repo hosts the `../../tests/harness` partition
   (mirrored per unit, the Test Tree Mirror Law); no test file lives inside this
   repo's source directories (the Test Segregation Law).
 
 ## Laws that govern work here
-- Constitution: the [canonical preferences.md Gist](https://gist.github.com/vex-graph/4132a6c45cb6d3797c3e8eff2e94035a); one real, Git-ignored workspace-root `../../../preferences.md`, not a Vexspoke file or symlink.
+- Constitution: the [canonical preferences.md Gist](https://gist.github.com/vex-graph/4132a6c45cb6d3797c3e8eff2e94035a); one real, Git-ignored workspace `../../gist/PREFERENCES.md`, not a Vexspoke file or symlink.
 - Commits land in THIS repo root, one cohesive unit each; never push unless asked.
 - Bounded Wait Law is load-bearing here: every external tool is a bounded child
   (100 ms reap slices, `SIGTERM` cancel), never an unbounded wait.

@@ -1,15 +1,15 @@
 # harness — Repo-Local Living Preferences
 > Repo-local preferences governed by the Living Documentation Law.
-> Universal Supreme Constitution: workspace-root preferences.md, published on Gist.
+> Universal Supreme Constitution: workspace gist/PREFERENCES.md, published on Gist.
 
 ## 0. Constitution Link (supreme)
-- [preferences.md](https://gist.github.com/vex-graph/4132a6c45cb6d3797c3e8eff2e94035a) — real, Git-ignored workspace-root file at ../../../preferences.md, not a tracked Vexspoke file or symlink.
-- All universal laws in `../../../preferences.md` are mandatory and binding across the ecosystem.
+- [preferences.md](https://gist.github.com/vex-graph/4132a6c45cb6d3797c3e8eff2e94035a) — real, Git-ignored workspace file at `../../gist/PREFERENCES.md`, not a tracked Vexspoke file or symlink.
+- All universal laws in `../../gist/PREFERENCES.md` are mandatory and binding across the ecosystem.
 - This document codifies **exclusive** preferences for `harness` (R4 agent interface). harness is the user's **own agent**, integrated with this ecosystem. R4 borrows Relational Engine memory/IO and Vexspoke CPU/behavior; it consumes `api-haven` connectors **as-is** and composes `darling-framework` for interface. This blueprint has no implemented engine integration; connector/GPU/OS implementation ownership does not move.
 
 ## 1. Repo-Local Law Index (Binding Matrix)
 
-Universal laws are inherited from the canonical `../../../preferences.md` Index; this table indexes the additional laws specific to this repository.
+Universal laws are inherited from the canonical `../../gist/PREFERENCES.md` Index; this table indexes the additional laws specific to this repository.
 
 | Law Title | Scope | Enforcement |
 | :--- | :--- | :--- |
@@ -83,7 +83,7 @@ dependency-free and legible to the AI pair system.
    surface; protocol parsing/hosting and external MCP transport consume API Haven
    contracts, never a parallel R4 implementation. The vocabulary is planned, not
    an implemented API or model/provider integration claim.
-6. **Proof before trust.** Future mirrored `tests/harness/` owners must prove
+6. **Proof before trust.** Future mirrored `../../tests/harness` owners must prove
    registry growth/exhaustion, bounded retained history/output, failure/recovery,
    cancellation and actual tool/provider seams. Legal shared-state pressure follows
    the Deliberate Exhaustion and Backend Trust Law; fake providers or documentation
@@ -95,8 +95,8 @@ dependency-free and legible to the AI pair system.
 
 ### Current draft and IDE evidence boundary
 
-`src/space/` now contains C23 ModelUser, Channel, Message and Task class pairs and
-header-only support, with offline behavioral owners under `tests/harness/space/`
+`src/space` now contains C23 ModelUser, Channel, Message and Task class pairs and
+header-only support, with offline behavioral owners under `../../tests/harness/space`
 (plus a compile-negative arity battery) run by `python3 tests/harness/run.py` and
 `./tools/b test <unit>`. They are still not live agent/provider/UI integration;
 message text stays borrowed, and the projections/identity contracts keep their
