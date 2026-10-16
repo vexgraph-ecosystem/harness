@@ -61,7 +61,7 @@
 /**
  * Returns an empty work identity, not a queued task.
  */
-Task Task_0(void) {
+Task Task_0() {
     return (Task) {0};
 }
 

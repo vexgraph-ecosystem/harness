@@ -25,7 +25,7 @@
 #define SPACE_CONSTRUCT(Class, ...) SPACE_JOIN(Class##_, SPACE_COUNT(__VA_ARGS__))(__VA_ARGS__)
 
 /**
- * Handle storage uses the ecosystem's 23+1 name extent in this draft.
+ * Handle storage uses the vexgraph-ecosystem-gitrepo's 23+1 name extent in this draft.
  */
 #define MODEL_USER_NAME_CAP 24u
 
