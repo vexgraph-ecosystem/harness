@@ -30,7 +30,7 @@ reject-and-preserve failure, null-safe getters and bounded projections. They do
 (forward contracts with nothing to bind yet).
 
 **Runtime platforms proven:** none. Workspace code-model proof is separately scoped
-in `../../tests/tools/harness_ide_test.py`; it does not prove agent execution or actual
+in `../../../tests/tools/harness_ide_test.py`; it does not prove agent execution or actual
 IDE appearance.
 
 ## What it is
@@ -68,12 +68,12 @@ tools, not includes.
 - Draft coordination values: `src/space` — four class pairs and shared support.
 - Interface (future): the agent host, its R5/project/tool seams and the injected
   `harness_run`/`harness_poll` driver.
-- Tests: the shared `../../tests` repo hosts the `../../tests/harness` partition
+- Tests: the shared `../../../tests` tree hosts the `../../../tests/harness` partition
   (mirrored per unit, the Test Tree Mirror Law); no test file lives inside this
   repo's source directories (the Test Segregation Law).
 
 ## Laws that govern work here
-- Constitution: the [canonical preferences.md Gist](https://gist.github.com/vex-graph/4132a6c45cb6d3797c3e8eff2e94035a); one real, Git-ignored workspace `../../gist/PREFERENCES.md`, not a Vexspoke file or symlink.
+- Constitution: the [canonical preferences Gist](https://gist.github.com/vex-graph/4132a6c45cb6d3797c3e8eff2e94035a); the compressed workspace law list is `../../../metadata/gists/preferences/gist.md`.
 - Commits land in THIS repo root, one cohesive unit each; never push unless asked.
 - Bounded Wait Law is load-bearing here: every external tool is a bounded child
   (100 ms reap slices, `SIGTERM` cancel), never an unbounded wait.
